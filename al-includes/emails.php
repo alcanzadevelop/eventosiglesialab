@@ -416,7 +416,7 @@ u + #body a {color:inherit;text-decoration:none;font-size:inherit;font-family:in
     <td class='center-text'  align='center' style='font-family:Roboto Slab,Arial,Helvetica,sans-serif;font-size:42px;line-height:52px;font-weight:400;font-style:normal;color:#333;text-decoration:none;letter-spacing:0px;'>
         
           <div  >
-            Ya estás listo(a) para
+            Tu entrada para
           </div>
         
     </td>

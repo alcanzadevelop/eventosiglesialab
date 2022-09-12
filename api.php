@@ -104,6 +104,7 @@ if (!empty($_GET['id'])) {
                     echo 'Mailer Error: ' . $mail->ErrorInfo;
                 } else {
                     echo 'El QR ha sido enviado.';
+                    echo returnQrCode($conn, $orderId);
                 }
 
                 //Aparece aviso de venta exitosa
