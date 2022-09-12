@@ -138,7 +138,7 @@ if (!empty($_GET['id'])) {
                             </tr>
                             <tr  >
                                 <td align='center' class='center-text'>
-                                    <img style='width:190px;border:0px;display: inline!important;' src='".$organizationLogo."' width='190' border='0'       alt='intro'>
+                                    <img style='width:190px;border:0px;display: inline!important;' src='<?php echo $organizationLogo; ?>' width='190' border='0'       alt='intro'>
                                 </td>
                             </tr>
                             <tr  >
