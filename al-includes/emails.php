@@ -273,14 +273,14 @@ function returnQrCode($conn, $orderId)
     $organizationId = getOrderSingle($conn, 'organizationId', $orderId);
     $eventId = getOrderSingle($conn, 'eventId', $orderId);
     $personId = getOrderSingle($conn, 'personId', $orderId);
-    $ticketId= getTicketSingle($conn, 'ticketId', $personId);
+    $ticketId= getTicketSingleForEmail($conn, 'ticketId', $orderId);
 
     $organizationLogo = getOrganizationInfoSingle($conn, "organizationLogo", $organizationId);
     $organizationName = getOrganizationInfoSingle($conn, "organizationName", $organizationId);
 
     $eventName=getEventInfoSingle($conn, 'eventName', $eventId);
 
-    $ticketQrLink=getTicketSingle($conn, 'ticketQrLink', $personId);
+    $ticketQrLink=getQrCodeSingle($conn, $ticketId);
 
     $QrReciept = "<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml' xmlns:v='urn:schemas-microsoft-com:vml' xmlns:o='urn:schemas-microsoft-com:office:office'>

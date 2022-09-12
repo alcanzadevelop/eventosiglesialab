@@ -138,6 +138,40 @@ function getTicketSingle($conn, $ticketSingle, $personId){
     }
 }
 
+function getTicketSingleForEmail($conn, $ticketSingle, $ticketId){
+    try{
+        $stmt = $conn->query("SELECT ".$ticketSingle." FROM `ticket` WHERE ticketId=" . $ticketId);
+        while ($row = $stmt->fetch()) {
+            $theInfo = $row[$ticketSingle];
+        }
+        if(!empty($theInfo)){
+            return $theInfo;
+        }
+        else{
+            return "";
+        }
+    }catch(Exception $e){
+
+    }
+}
+
+function getQrCodeSingle($conn, $ticketId){
+    try{
+        $stmt = $conn->query("SELECT ticketQrLink FROM `ticket` WHERE ticketId=" . $ticketId);
+        while ($row = $stmt->fetch()) {
+            $theInfo = $row['ticketQrLink'];
+        }
+        if(!empty($theInfo)){
+            return $theInfo;
+        }
+        else{
+            return "";
+        }
+    }catch(Exception $e){
+
+    }
+}
+
 function getEventInfoSingle($conn, $eventInfoSingle, $eventId){
     try{
         $stmt = $conn->query("SELECT ".$eventInfoSingle." FROM `event` WHERE eventId=" . $eventId);
