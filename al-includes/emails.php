@@ -268,12 +268,9 @@ u + #body a {color:inherit;text-decoration:none;font-size:inherit;font-family:in
     return $paymentReciept;
 }
 
-function returnQrCode($conn, $orderId)
+function returnQrCode($conn, $orderId, $ticketId)
 {
     $organizationId = getOrderSingle($conn, 'organizationId', $orderId);
-    $eventId = getOrderSingle($conn, 'eventId', $orderId);
-    $personId = getOrderSingle($conn, 'personId', $orderId);
-    $ticketId= getTicketSingleForEmail($conn, 'ticketId', $orderId);
 
     $organizationLogo = getOrganizationInfoSingle($conn, "organizationLogo", $organizationId);
     $organizationName = getOrganizationInfoSingle($conn, "organizationName", $organizationId);

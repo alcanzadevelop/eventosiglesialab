@@ -96,21 +96,20 @@ if (!empty($_GET['id'])) {
 
                 $mail->Subject = 'TU ENTRADA para - '.$eventName;
 
-                $mail->msgHTML(returnQrCode($conn, $orderId));
+                $mail->msgHTML(returnQrCode($conn, $orderId, $ticketId));
                 $mail->IsHTML(true);
                 $mail->CharSet = 'UTF-8';
 
                 if (!$mail->send()) {
                     echo 'Mailer Error: ' . $mail->ErrorInfo;
                 } else {
-                    echo 'El QR ha sido enviado.';
-                    echo returnQrCode($conn, $orderId);
+
+                    //Aparece aviso de venta exitosa
+                    header('location: exito?id='.$orderId);
+
                 }
 
-                //Aparece aviso de venta exitosa
-
             }
-
 
         }
 
