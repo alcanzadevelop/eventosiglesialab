@@ -1,9 +1,8 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html lang="es">
-<?php require('al-admin/core.php');?>
-<?php $eventId=$_GET['eventId'];?>
 <?php
+
+    session_start();
+    require('al-admin/core.php');
+    $eventId=$_GET['eventId'];
 
     if(empty($_SESSION['userId'])){
        header('Location: login.php');
@@ -21,7 +20,7 @@
 
     function getNumberSold($conn, $eventId)
     {
-        $sql = "SELECT count(*) FROM `ticket` WHERE eventId=" . $eventId;
+        $sql = "SELECT count(*) FROM `ticket` WHERE eventId=" . $eventId . " AND ticketState='VALID'";
         $result = $conn->prepare($sql);
         $result->execute([$bar]);
         $number_of_rows = $result->fetchColumn();
@@ -42,6 +41,8 @@
         $theValue="FALSE";
     }
 ?>
+<!DOCTYPE html>
+<html lang="es">
 <?php include('al-includes/head.php');?>
 
 <body>
@@ -91,8 +92,9 @@
                 </div>
                 <div class="row">
                 <?php if ($theValue=="FALSE") {
-
-                    $stmt = $conn->query("SELECT * FROM event");
+                    date_default_timezone_set('America/Santiago');
+                    $today = date("Y-m-d");
+                    $stmt = $conn->query("SELECT * FROM event WHERE eventFinalDate >= "."'".$today."'");
                     while ($row = $stmt->fetch()) {
                         echo "
                         

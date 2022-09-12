@@ -87,8 +87,9 @@
                 </div>
                 <div class="row">
                 <?php if ($theValue=="FALSE") {
-
-                    $stmt = $conn->query("SELECT * FROM event");
+                    date_default_timezone_set('America/Santiago');
+                    $today = date("Y-m-d");
+                    $stmt = $conn->query("SELECT * FROM event WHERE eventFinalDate >= "."'".$today."'");
                     while ($row = $stmt->fetch()) {
                         echo "
                         

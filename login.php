@@ -1,36 +1,34 @@
-<?php session_start(); ?>
+<?php
+
+    session_start();
+    include 'al-admin/core.php';
+    require('al-admin/functions.php');
+
+    $message = "";
+
+    if (!empty($_SESSION['userId'])) {
+        header('Location: acreditar');
+    }
+
+    if (!empty($_POST['email']) && !empty($_POST['password'])) {
+        $email=filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $pass=md5($_POST['password']);
+        if (login($conn, $email, $pass)) {
+            if ($_SESSION['userState'] == "ACREDITADOR") {
+                header('Location: acreditar');
+            } else {
+                header('Location: home');
+            }
+        } else {
+            if (empty($_SESSION['userId'])) {
+                $message = "<h4 class='text-center mb-4 text-white'>Ha ocurrido un error. Prueba nuevamente.</h4>";
+            }
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="es" class="h-100">
-<?php require('al-admin/core.php');?>
-<?php
-$message="";
-
-if(!empty($_SESSION['userId'])){
-    header('Location: acreditar.php');
-}
-
-if(!empty($_POST['email']) && !empty($_POST['password'])){
-    $user=$_POST['email'];
-    $pass=md5($_POST['password']);
-    $stmt = $conn->query("SELECT * FROM `user` WHERE userEmail='" . $user . "' AND userPassword='" . $pass . "'");
-    while ($row = $stmt->fetch()) {
-        $_SESSION['userId'] = $row['userId'];
-        $_SESSION['userName'] = $row['userName'];
-        $_SESSION['userLastName'] = $row['userLastName'];
-        $_SESSION['userRut'] = $row['userRut'];
-        $_SESSION['userEmail'] = $row['userEmail'];
-        $_SESSION['userOrganization'] = $row['userOrganization'];
-        $_SESSION['userState'] = $row['userState'];
-        $_SESSION['organizationId'] = $row['organizationId'];
-    }
-    if ($_SESSION['userState']=="ACREDITADOR" && !empty($_SESSION['userId'])) {
-        header('Location: acreditar.php');
-    }
-    if (empty($_SESSION['userId'])) {
-        $message="<h4 class='text-center mb-4 text-white'>Ha ocurrido un error. Prueba nuevamente.</h4>";
-    }
-}
-?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -85,8 +83,6 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
             </div>
         </div>
     </div>
-
-
     <!--**********************************
         Scripts
     ***********************************-->

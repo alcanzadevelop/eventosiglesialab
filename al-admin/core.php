@@ -1,8 +1,12 @@
 <?php
-$username="u260263254_Eventos";
+$username="root";
 $db="u260263254_Eventos";
-$password="u260263254Eventos";
+$password="root";
 $servername = "localhost";
+
+#$username="u260263254_Eventos";
+#$password="u260263254Eventos";
+#$db="u260263254_Eventos";
 #$servername = "185.211.7.1";
 
 try {

@@ -1,4 +1,27 @@
-<?php session_start(); ?>
+<?php
+
+    session_start();
+    include 'al-admin/core.php';
+    require('al-admin/functions.php');
+    $message = "";
+
+    if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['userOrganization'])) {
+        $name=filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+        $lastName=filter_var($_POST['lastName'], FILTER_SANITIZE_STRING);
+        $email=filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $pass=md5($_POST['password']);
+        $userOrganization=filter_var($_POST['userOrganization'], FILTER_SANITIZE_STRING);
+
+        if(createCreditor($conn, $name, $lastName, $email, $pass, $userOrganization, $_SESSION['organizationId'])){
+            $message = "<h4 class='text-center mb-4 text-white'>El usuario ha sido creado exitosamente.</h4>";
+        }
+        else{
+            $message = "<h4 class='text-center mb-4 text-white'>Ha ocurrido un error. El usuario ya existe en tu organización.</h4>";
+        }
+
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -62,22 +85,27 @@
 	                            <div class="col-xl-12">
 	                                <div class="auth-form">
 	                                    <h4 class="text-center mb-4 text-white">Registra a un nuevo acreditador</h4>
-	                                    <form action="index.html">
+                                        <?php echo $message; ?>
+	                                    <form name="newCreditor" method="POST" action="">
 	                                        <div class="form-group">
-	                                            <label class="mb-1 text-white"><strong>Nombre y Apellido</strong></label>
-	                                            <input type="text" class="form-control" placeholder="Nombre y Apellido" required>
+	                                            <label class="mb-1 text-white"><strong>Nombre</strong></label>
+	                                            <input type="text" name="name" class="form-control" placeholder="Nombre" required>
+	                                        </div>
+                                            <div class="form-group">
+	                                            <label class="mb-1 text-white"><strong>Apellido</strong></label>
+	                                            <input type="text" name="lastName" class="form-control" placeholder="Apellido" required>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label class="mb-1 text-white"><strong>Email</strong></label>
-	                                            <input type="email" class="form-control" placeholder="hola@iglesialab.com" required>
+	                                            <input type="email" name="email" class="form-control" placeholder="hola@iglesialab.com" required>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label class="mb-1 text-white"><strong>Contraseña</strong></label>
-	                                            <input type="password" class="form-control" value="Contraseña" required>
+	                                            <input type="password" name="password" class="form-control" value="Contraseña" required>
 	                                        </div>
 	                                        <div class="form-group">
 	                                            <label class="mb-1 text-white"><strong>Organización | Área</strong></label>
-	                                            <input type="text" class="form-control" placeholder="Organización o Área" required>
+	                                            <input type="text" name="userOrganization" class="form-control" placeholder="Organización o Área" required>
 	                                        </div>
 	                                        <div class="text-center mt-4">
 	                                            <button type="submit" class="btn bg-white text-primary btn-block">Registrar</button>

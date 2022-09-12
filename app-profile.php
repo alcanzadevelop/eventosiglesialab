@@ -1,8 +1,9 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html lang="es">
-<?php require('al-admin/core.php'); ?>
 <?php
+
+session_start();
+
+require('al-admin/core.php');
+
 if (empty($_SESSION['userId'])) {
     header('Location: login.php');
 }
@@ -33,6 +34,10 @@ if ($_GET['res'] == 1) {
     $message = "<div class='alert alert-success' role='alert'>Tu contraseña ha sido cambiada exitosamente.</div>";
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="es">
+
 <?php include('al-includes/head.php'); ?>
 
 <body>
