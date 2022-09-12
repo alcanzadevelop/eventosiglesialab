@@ -44,6 +44,7 @@ if (!empty($_GET['id'])) {
             QRcode::png($codeContents, 'al-uploads/events/qrcodes/' . $randName, QR_ECLEVEL_L, 3);
             $ticketQrLink = "https://eventos.iglesialab.com/al-uploads/events/qrcodes/" . $randName;
             updateTicketQrLink($conn, $ticketId, $ticketQrLink);
+            updateOrderWithTicketId($conn, $ticketId, $orderId);
 
             //Enviamos comprobante de pago al cliente
 
@@ -55,15 +56,15 @@ if (!empty($_GET['id'])) {
 
             $mail = new PHPMailer;
             $mail->isSMTP();
-            $mail->SMTPDebug = 2;
-            $mail->Host = 'smtp.hostinger.com';
+            $mail->SMTPDebug = 0;
+            $mail->Host = 'smtp.titan.email';
             $mail->Port = 587;
             $mail->SMTPAuth = true;
 
             $mail->Username = 'noresponder@iglesialab.com';
             $mail->Password = '748159263';
 
-            $mail->setFrom('no-responder@iglesialab.com', $organizationName);
+            $mail->setFrom('noresponder@iglesialab.com', $organizationName);
             $mail->addReplyTo($organizationEmail, $organizationName);
             $mail->addAddress($personEmail, $personName);
 
@@ -71,16 +72,44 @@ if (!empty($_GET['id'])) {
 
             $mail->msgHTML(returnpaymentReciept($conn, $orderId));
             $mail->IsHTML(true);
+            $mail->CharSet = 'UTF-8';
 
             if (!$mail->send()) {
                 echo 'Mailer Error: ' . $mail->ErrorInfo;
             } else {
-                echo 'El comprobante ha sido enviado.';
+
+                //Enviamos código QR al cliente
+
+                $mail = new PHPMailer;
+                $mail->isSMTP();
+                $mail->SMTPDebug = 0;
+                $mail->Host = 'smtp.titan.email';
+                $mail->Port = 587;
+                $mail->SMTPAuth = true;
+
+                $mail->Username = 'noresponder@iglesialab.com';
+                $mail->Password = '748159263';
+
+                $mail->setFrom('noresponder@iglesialab.com', $organizationName);
+                $mail->addReplyTo($organizationEmail, $organizationName);
+                $mail->addAddress($personEmail, $personName);
+
+                $mail->Subject = 'TU ENTRADA para - '.$eventName;
+
+                $mail->msgHTML(returnQrCode($conn, $orderId));
+                $mail->IsHTML(true);
+                $mail->CharSet = 'UTF-8';
+
+                if (!$mail->send()) {
+                    echo 'Mailer Error: ' . $mail->ErrorInfo;
+                } else {
+                    echo 'El QR ha sido enviado.';
+                }
+
+                //Aparece aviso de venta exitosa
+
             }
 
-            //Enviamos código QR al cliente
-
-            //Aparece aviso de venta exitosa
 
         }
 

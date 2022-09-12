@@ -263,6 +263,19 @@ function updateTicketQrLink($conn, $ticketId, $ticketQrLink)
     }
 }
 
+function updateOrderWithTicketId($conn, $ticketId, $orderId)
+{
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "UPDATE `order` SET ticketId=".$ticketId." WHERE orderId=".$orderId;
+    $stmt = $conn->prepare($sql);
+    if($stmt->execute()){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 /* FUNCIONES PAYKU */
 
 function checkPayment($id){
