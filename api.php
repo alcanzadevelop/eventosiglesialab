@@ -45,6 +45,7 @@ if (!empty($_GET['id'])) {
             $ticketQrLink = "https://eventos.iglesialab.com/al-uploads/events/qrcodes/" . $randName;
             updateTicketQrLink($conn, $ticketId, $ticketQrLink);
             updateOrderWithTicketId($conn, $ticketId, $orderId);
+            recordTransaction($conn, $id, $personId, $ticketId, $orderId);
 
             //Enviamos comprobante de pago al cliente
 

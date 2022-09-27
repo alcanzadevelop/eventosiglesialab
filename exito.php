@@ -169,12 +169,18 @@ if (!empty($_GET['id'])) {
                                 <td class='center-text'  align='center' style='font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px;line-height:26px;font-weight:300;font-style:normal;color:#333;text-decoration:none;letter-spacing:0px;'>
 
                                     <div>
-                                        Recuerda que el día del evento debes presentar tu email con el código QR el día del evento. Esta será tu entrada y es obligatoria para tu acreditación<br/><br/>
-                                        <br/><br/>
-                                        <img src='".$ticketQrLink."' width='100%'>
                                         <br/><br/>
 
-                                        Ese QR mostrará TODAS las entradas que hayas comprado. No es necesario tener una por cada entrada. Te recordamos estar atento(a) a las medidas sanitarias requeridas por el evento. Ante cualquier duda contacta a ala organización a: <?php echo $organizationEmail; ?>
+
+                                        Recuerda que el día del evento debes presentar tu email con el código QR el día del evento. Esta será tu entrada y es obligatoria para tu acreditación<br/><br/>
+                                        <br/><br/>
+
+                                        <br/><br/>
+
+                                        Ese QR mostrará TODAS las entradas que hayas comprado. No es necesario tener una por cada entrada. Te recordamos estar atento(a) a las medidas sanitarias requeridas por el evento. Ante cualquier duda contacta a ala organización a: <b><?php echo $organizationEmail; ?></b>
+                                        <br/><br/>
+
+
                                     </div>
 
                                 </td>

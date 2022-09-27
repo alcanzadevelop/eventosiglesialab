@@ -49,25 +49,27 @@
 <div class="deznav">
     <div class="deznav-scroll">
         <ul class="metismenu" id="menu">
-            <?php if($_SESSION['userState']=="ADMINISTRADOR"){ ?>
+            <?php if($_SESSION['userState']=="ADMINISTRADOR" || $_SESSION['userState']=="ADMINISTRADORX"){ ?>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
                     <span class="nav-text">Panel</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="mis-eventos">Nuevo Evento</a></li>
+                    <li><a href="nuevo-evento">Nuevo Evento</a></li>
                     <li><a href="mis-eventos">Mis Eventos</a></li>
-
+                    <li><a href="tickets-vendidos">Ticket Vendidos</a></li>
+                    <!--
                     <li><a href="index.html">Panel</a></li>
                     <li><a href="event.html">Event</a></li>
                     <li><a href="event-detail.html">Event Detail</a></li>
                     <li><a href="customers.html">Customers</a></li>
                     <li><a href="analytics.html">Analytics</a></li>
                     <li><a href="reviews.html">Reviews</a></li>
+                    -->
                 </ul>
             </li>
             <?php } ?>
-            <?php if($_SESSION['userState']=="ACREDITADOR" || $_SESSION['userState']=="ADMINISTRADOR"){ ?>
+            <?php if($_SESSION['userState']=="ACREDITADOR" || $_SESSION['userState']=="ADMINISTRADOR" || $_SESSION['userState']=="ADMINISTRADORX"){ ?>
                 <li>
                     <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="flaticon-381-network"></i>
@@ -83,7 +85,7 @@
                     </ul>
                 </li>
             <?php } ?>
-            <?php if($_SESSION['userState']=="ADMINISTRADOR"){ ?>
+            <?php if($_SESSION['userState']=="ADMINISTRADORX"){ ?>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-television"></i>
                     <span class="nav-text">Apps</span>
