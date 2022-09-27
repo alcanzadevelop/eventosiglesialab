@@ -1,6 +1,6 @@
 <!--************ Nav header start ************-->
 <div class="nav-header">
-        <a <?php if($_SESSION['userState']!="ACREDITADOR"){ echo 'href="acreditar"'; } ?> class="brand-logo">
+        <a <?php if($_SESSION['userState']!="ACREDITADOR"){ echo 'href="."'; } ?> class="brand-logo">
         <img class="logo-abbr" src="./images/logo.png" alt="">
         <img class="logo-compact" src="./images/logo-text.png" alt="">
         <img class="brand-title" src="./images/logo-text.png" alt="">
@@ -55,10 +55,10 @@
                     <span class="nav-text">Panel</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="nuevo-evento">Nuevo Evento</a></li>
                     <li><a href="mis-eventos">Mis Eventos</a></li>
                     <li><a href="tickets-vendidos">Ticket Vendidos</a></li>
                     <!--
+                    <li><a href="nuevo-evento">Nuevo Evento</a></li>
                     <li><a href="index.html">Panel</a></li>
                     <li><a href="event.html">Event</a></li>
                     <li><a href="event-detail.html">Event Detail</a></li>

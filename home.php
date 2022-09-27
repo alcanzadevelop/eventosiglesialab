@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col-xl-12 col-xxl-12">
                         <div class="row">
-
+                            <!--
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-header border-0 pb-sm-0 pb-5">
@@ -164,6 +164,7 @@
                                     </div>
                                 </div>
                             </div>
+                            -->
                         </div>
                     </div>
                 </div>

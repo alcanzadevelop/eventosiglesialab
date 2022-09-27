@@ -7,7 +7,7 @@
     $message = "";
 
     if (!empty($_SESSION['userId'])) {
-        header('Location: acreditar');
+        header('Location: home');
     }
 
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
