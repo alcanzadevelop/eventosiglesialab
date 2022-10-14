@@ -27,8 +27,17 @@ $token=$_GET['token'];
           <td>RUT: " . getPersonSingle($conn, 'personRut', $row['personId']) . "</td>
           <td>Nº de Entradas: " . $row['orderTickets'] . "</td>
           <td>Evento: " . getEventInfoSingle($conn, 'eventName', $row['eventId']) . "</td>
-        </tr>
+        
         ";
+        if(updateTicketQrLinkValidate($conn, $id)){
+            echo "
+<td><b>Entrada Validada</b></td>
+</tr>";
+        }else{
+            echo "
+<td><b>ESTA ENTRADA YA FUE VALIDADA</b></td>
+</tr>";
+        }
     }
 
 }

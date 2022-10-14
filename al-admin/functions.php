@@ -378,6 +378,18 @@ function updateTicketQrLink($conn, $ticketId, $ticketQrLink)
     }
 }
 
+function updateTicketQrLinkValidate($conn, $ticketId)
+{
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "UPDATE `ticket` SET ticketState='ACCREDITED' WHERE ticketId=" . $ticketId;
+    $stmt = $conn->prepare($sql);
+    if ($stmt->execute()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function updateOrderWithTicketId($conn, $ticketId, $orderId)
 {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
