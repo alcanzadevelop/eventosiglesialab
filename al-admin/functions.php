@@ -467,7 +467,7 @@ function getOrderInfo($conn, $orderSingle, $ticketId)
         if (!empty($theInfo)) {
             return $theInfo;
         } else {
-            return "";
+            return "NO";
         }
     } catch (Exception $e) {
 
