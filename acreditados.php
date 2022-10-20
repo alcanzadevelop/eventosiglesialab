@@ -150,7 +150,6 @@
                                             while ($row = $stmt->fetch()) {
                                                 echo "<tr>";
                                                 echo "<td>#00" . $row['personId'] . "</td>";
-                                                echo "<td>" . getTransactionDate($conn, $row['ticketId']) . "</td>";
                                                 $stmtx = $conn->query("SELECT * FROM person WHERE personId=" . $row['personId']);
                                                 while ($rowx = $stmtx->fetch()) {
                                                     echo "<td><span class='text-nowrap'>" . $rowx['personName'] . "</span></td>";
