@@ -144,8 +144,6 @@
                                             <tbody>
                                             <?php
 
-
-
                                             $stmt = $conn->query("SELECT * FROM ticket WHERE eventId=" . $_GET['eventId'] . " AND ticketState='ACCREDITED'");
                                             while ($row = $stmt->fetch()) {
                                                 echo "<tr>";

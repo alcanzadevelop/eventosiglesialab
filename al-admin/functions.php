@@ -501,16 +501,18 @@ function displayTickets($conn, $eventId)
             $personRut = getPersonInfo($conn, 'personRut', $row['personId']);
             $personEmail = getPersonInfo($conn, 'personEmail', $row['personId']);
             $orderTickets = getOrderInfo($conn, 'orderTickets', $row['ticketId']);
-            echo "<tr>";
-            echo "<td>#0" . $orderId . "</td>";
-            echo "<td>" . $personName . "</td>";
-            echo "<td>" . $personRut . "</td>";
-            echo "<td>" . $personEmail . "</td>";
-            echo "<td>" . $orderTickets . "</td>";
-            echo "<td>
+            if(!empty($orderId) && !empty($orderTickets)){
+                echo "<tr>";
+                echo "<td>#0" . $orderId . "</td>";
+                echo "<td>" . $personName . "</td>";
+                echo "<td>" . $personRut . "</td>";
+                echo "<td>" . $personEmail . "</td>";
+                echo "<td>" . $orderTickets . "</td>";
+                echo "<td>
                     <a href='api-fun.php?action=3647ef876f87&idTicket=" . $row['ticketId'] . "&eventId=" . $eventId . "' class='btn btn-primary btn-sm light'>Acreditar</a>
                   </td>";
-            echo "</tr>";
+                echo "</tr>";
+            }
         }
     } catch (Exception $e) {
 
