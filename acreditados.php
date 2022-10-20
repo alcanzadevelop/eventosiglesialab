@@ -1,9 +1,9 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
-<?php require('al-admin/core.php');?>
-<?php $eventId=$_GET['eventId'];?>
-<?php
+<?php require('al-admin/core.php');
+
+    $eventId=$_GET['eventId'];
 
     function getTransactionDate($conn, $ticketId)
     {
@@ -154,11 +154,8 @@
                                                 $stmtx = $conn->query("SELECT * FROM person WHERE personId=" . $row['personId']);
                                                 while ($rowx = $stmtx->fetch()) {
                                                     echo "<td><span class='text-nowrap'>" . $rowx['personName'] . "</span></td>";
-                                                    echo "<td>" . $rowx['personLastName'] . "</td>";
                                                     echo "<td>" . $rowx['personRut'] . "</td>";
-                                                    echo "<td>" . $rowx['personPhone'] . "</td>";
                                                     echo "<td>" . $rowx['personEmail'] . "</td>";
-                                                    echo "<td>" . $rowx['personExtra'] . "</td>";
                                                 }
                                                 echo "<td>ACREDITADO(A)";
                                                 echo "</td>";
