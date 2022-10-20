@@ -3,7 +3,7 @@
 <html lang="es">
 <?php
 
-    require('al-admin/core.php');
+    include 'al-admin/core.php';
     require('al-admin/functions.php');
     $pageName="Equipo Acreditador";
 
