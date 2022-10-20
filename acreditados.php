@@ -91,12 +91,18 @@
                     $today = date("Y-m-d");
                     $stmt = $conn->query("SELECT * FROM event");
                     while ($row = $stmt->fetch()) {
+                        if(empty($row['eventName'])){
+                            $image="./images/card/1.png";
+                        }
+                        else{
+                            $image="https://eventos.iglesialab.com/al-uploads/events/covers/".$row['eventImage'];
+                        }
                         echo "
                         
                             <div class='col-xl-6'>
                                 <a href='acreditados.php?eventId=" . $row['eventId'] . "'>
                                 <div class='card mb-3'>
-                                    <img class='card-img-top img-fluid' src='./images/card/1.png' alt='" . $row['eventName'] . "'>
+                                    <img class='card-img-top img-fluid' src='".$image."' alt='" . $row['eventName'] . "'>
                                     <div class='card-header'>
                                         <h5 class='card-title'>" . $row['eventName'] . "</h5>
                                     </div>
