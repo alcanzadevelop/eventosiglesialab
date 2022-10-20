@@ -100,7 +100,7 @@
                         echo "
                         
                             <div class='col-xl-6'>
-                                <a href='acreditados.php?eventId=" . $row['eventId'] . "'>
+                                <a href='acreditados?eventId=" . $row['eventId'] . "'>
                                 <div class='card mb-3'>
                                     <img class='card-img-top img-fluid' src='".$image."' alt='" . $row['eventName'] . "'>
                                     <div class='card-header'>
@@ -135,13 +135,9 @@
                                             <thead>
                                             <tr>
                                                 <th>Nº Orden</th>
-                                                <th>Fecha</th>
                                                 <th>Nombre</th>
-                                                <th>Apellido</th>
                                                 <th>Rut</th>
-                                                <th>Teléfono</th>
                                                 <th>Email</th>
-                                                <th>Iglesia</th>
                                                 <th>Estado</th>
                                             </tr>
                                             </thead>
