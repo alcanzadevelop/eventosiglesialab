@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/jquery-asColorPicker/js" />
+      <path value="$PROJECT_DIR$/vendor/jquery-asColorPicker/css" />
+      <path value="$PROJECT_DIR$/vendor/amcharts/images" />
+      <path value="$PROJECT_DIR$/vendor/jquery-asColorPicker/images" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-touchspin/css" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-touchspin/js" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-tagsinput/css" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-tagsinput/js" />
+      <path value="$PROJECT_DIR$/vendor/amcharts/plugins" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap/dist" />
+      <path value="$PROJECT_DIR$/vendor/select2/css" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap/scss" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap/js" />
+      <path value="$PROJECT_DIR$/vendor/select2/js" />
+      <path value="$PROJECT_DIR$/vendor/jqueryui/css" />
+      <path value="$PROJECT_DIR$/vendor/toastr/css" />
+      <path value="$PROJECT_DIR$/vendor/jqueryui/js" />
+      <path value="$PROJECT_DIR$/vendor/toastr/js" />
+      <path value="$PROJECT_DIR$/vendor/pickadate/translations" />
+      <path value="$PROJECT_DIR$/vendor/pickadate/themes" />
+      <path value="$PROJECT_DIR$/vendor/nestable2/css" />
+      <path value="$PROJECT_DIR$/vendor/nestable2/js" />
+      <path value="$PROJECT_DIR$/vendor/jqvmap/js" />
+      <path value="$PROJECT_DIR$/vendor/metismenu/css" />
+      <path value="$PROJECT_DIR$/vendor/jqvmap/css" />
+      <path value="$PROJECT_DIR$/vendor/dropzone/dist" />
+      <path value="$PROJECT_DIR$/vendor/metismenu/js" />
+      <path value="$PROJECT_DIR$/vendor/chartist/js" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-v4-rtl/scss" />
+      <path value="$PROJECT_DIR$/vendor/chartist/css" />
+      <path value="$PROJECT_DIR$/vendor/aos/js" />
+      <path value="$PROJECT_DIR$/vendor/aos/css" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-select/dist" />
+      <path value="$PROJECT_DIR$/vendor/jquery-smartwizard/dist" />
+      <path value="$PROJECT_DIR$/vendor/jquery-smartwizard/examples" />
+      <path value="$PROJECT_DIR$/vendor/jquery-smartwizard/src" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/jquery-smartwizard/.github" />
+      <path value="$PROJECT_DIR$/vendor/highlightjs/styles" />
+      <path value="$PROJECT_DIR$/vendor/jquery-smartwizard/test" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/clockpicker/css" />
+      <path value="$PROJECT_DIR$/vendor/lightgallery/fonts" />
+      <path value="$PROJECT_DIR$/vendor/perfect-scrollbar/css" />
+      <path value="$PROJECT_DIR$/vendor/lightgallery/js" />
+      <path value="$PROJECT_DIR$/vendor/lightgallery/img" />
+      <path value="$PROJECT_DIR$/vendor/clockpicker/js" />
+      <path value="$PROJECT_DIR$/vendor/lightgallery/css" />
+      <path value="$PROJECT_DIR$/vendor/perfect-scrollbar/js" />
+      <path value="$PROJECT_DIR$/vendor/jquery-steps/build" />
+      <path value="$PROJECT_DIR$/vendor/jquery-steps/css" />
+      <path value="$PROJECT_DIR$/vendor/summernote/font" />
+      <path value="$PROJECT_DIR$/vendor/fullcalendar/js" />
+      <path value="$PROJECT_DIR$/vendor/summernote/js" />
+      <path value="$PROJECT_DIR$/vendor/fullcalendar/css" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/sweetalert2/dist" />
+      <path value="$PROJECT_DIR$/vendor/datatables/css" />
+      <path value="$PROJECT_DIR$/vendor/datatables/images" />
+      <path value="$PROJECT_DIR$/vendor/datatables/js" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-material-datetimepicker/js" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-material-datetimepicker/css" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/chartist-plugin-tooltips/js" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/chartist-plugin-tooltips/css" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-datetimepicker/js" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-datetimepicker/css" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-multiselect/js" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap-multiselect/css" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.3">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
+</project>

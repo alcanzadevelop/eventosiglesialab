@@ -77,8 +77,8 @@
                     </a>
                     <ul aria-expanded="false">
                         <?php if($_SESSION['userState']=="ADMINISTRADOR"){ ?>
-                        <li><a href="nuevo-acreditador">Nuevo Acreditador</a></li>
-                        <li><a href="equipo">Equipo Acreditador</a></li>
+                        <li><a href="al-nuevo-acreditador">Nuevo Acreditador</a></li>
+                        <li><a href="al-equipo-acreditador">Equipo Acreditador</a></li>
                         <?php } ?>
                         <li><a href="acreditar">Acreditar Personas</a></li>
                         <li><a href="acreditados">Lista de Acreditados</a></li>

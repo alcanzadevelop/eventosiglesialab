@@ -89,19 +89,18 @@
                 <?php if ($theValue=="FALSE") {
                     date_default_timezone_set('America/Santiago');
                     $today = date("Y-m-d");
-                    $stmt = $conn->query("SELECT * FROM event WHERE eventFinalDate >= "."'".$today."'");
+                    $stmt = $conn->query("SELECT * FROM event");
                     while ($row = $stmt->fetch()) {
                         echo "
                         
                             <div class='col-xl-6'>
                                 <a href='acreditados.php?eventId=" . $row['eventId'] . "'>
                                 <div class='card mb-3'>
-                                    <img class='card-img-top img-fluid' src='./images/card/1.png' alt='Card image cap'>
+                                    <img class='card-img-top img-fluid' src='./images/card/1.png' alt='" . $row['eventName'] . "'>
                                     <div class='card-header'>
                                         <h5 class='card-title'>" . $row['eventName'] . "</h5>
                                     </div>
                                     <div class='card-body'>
-                                        <p class='card-text'>" . $row['eventDescription'] . "</p>
                                         <p class='card-text text-dark'>Comienza " . $row['eventDate'] . "</p>
                                     </div>
                                 </div>

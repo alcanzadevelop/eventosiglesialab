@@ -457,6 +457,66 @@ function listEventsOrganization($conn, $userOrganization)
     }
 }
 
+function getOrderInfo($conn, $orderSingle, $ticketId)
+{
+    try {
+        $stmt = $conn->query("SELECT " . $orderSingle . " FROM `order` WHERE ticketId=" . $ticketId);
+        while ($row = $stmt->fetch()) {
+            $theInfo = $row[$orderSingle];
+        }
+        if (!empty($theInfo)) {
+            return $theInfo;
+        } else {
+            return "";
+        }
+    } catch (Exception $e) {
+
+    }
+}
+
+function getPersonInfo($conn, $personSingle, $personId)
+{
+    try {
+        $stmt = $conn->query("SELECT " . $personSingle . " FROM `person` WHERE personId=" . $personId);
+        while ($row = $stmt->fetch()) {
+            $theInfo = $row[$personSingle];
+        }
+        if (!empty($theInfo)) {
+            return $theInfo;
+        } else {
+            return "";
+        }
+    } catch (Exception $e) {
+
+    }
+}
+
+function displayTickets($conn, $eventId)
+{
+    try {
+        $stmt = $conn->query("SELECT * FROM ticket WHERE eventId=" . $eventId . " AND ticketState='VALID'");
+        while ($row = $stmt->fetch()) {
+            $orderId = getOrderInfo($conn, 'orderId', $row['ticketId']);
+            $personName = getPersonInfo($conn, 'personName', $row['personId']);
+            $personRut = getPersonInfo($conn, 'personRut', $row['personId']);
+            $personEmail = getPersonInfo($conn, 'personEmail', $row['personId']);
+            $orderTickets = getOrderInfo($conn, 'orderTickets', $row['ticketId']);
+            echo "<tr>";
+            echo "<td>#0" . $orderId . "</td>";
+            echo "<td>" . $personName . "</td>";
+            echo "<td>" . $personRut . "</td>";
+            echo "<td>" . $personEmail . "</td>";
+            echo "<td>" . $orderTickets . "</td>";
+            echo "<td>
+                    <a href='api-fun.php?action=3647ef876f87&idTicket=" . $row['ticketId'] . "&eventId=" . $eventId . "' class='btn btn-primary btn-sm light'>Acreditar</a>
+                  </td>";
+            echo "</tr>";
+        }
+    } catch (Exception $e) {
+
+    }
+}
+
 /* FUNCIONES PAYKU */
 
 function checkPayment($id)
