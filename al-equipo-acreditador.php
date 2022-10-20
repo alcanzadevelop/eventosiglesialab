@@ -4,6 +4,7 @@
 <?php
 
     require('al-admin/core.php');
+    require('al-admin/functions.php');
     $pageName="Equipo Acreditador";
 
 ?>
@@ -45,29 +46,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <?php
-
-                                        function displayTeam($conn)
-                                        {
-                                            try {
-                                                $stmt = $conn->query("SELECT * FROM user WHERE userState='ACREDITADOR'");
-                                                while ($row = $stmt->fetch()) {
-                                                    echo "<tr>";
-                                                    echo "<td>" . $row['userId'] . "</td>";
-                                                    echo "<td>" . $row['userName'] . "</td>";
-                                                    echo "<td>" . $row['userLastName'] . "</td>";
-                                                    echo "<td>" . $row['userEmail'] . "</td>";
-                                                    echo "<td>" . $row['userOrganization'] . "</td>";
-                                                    echo "</tr>";
-                                                }
-                                            } catch (Exception $e) {
-
-                                            }
-                                        }
-
-                                        displayTeam($conn);
-
-                                        ?>
+                                        <?php displayTeam($conn); ?>
                                         </tbody>
                                     </table>
                                 </div>

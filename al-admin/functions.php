@@ -517,6 +517,24 @@ function displayTickets($conn, $eventId)
     }
 }
 
+function displayTeam($conn)
+{
+    try {
+        $stmt = $conn->query("SELECT * FROM user WHERE userState='ACREDITADOR'");
+        while ($row = $stmt->fetch()) {
+            echo "<tr>";
+            echo "<td>" . $row['userId'] . "</td>";
+            echo "<td>" . $row['userName'] . "</td>";
+            echo "<td>" . $row['userLastName'] . "</td>";
+            echo "<td>" . $row['userEmail'] . "</td>";
+            echo "<td>" . $row['userOrganization'] . "</td>";
+            echo "</tr>";
+        }
+    } catch (Exception $e) {
+
+    }
+}
+
 /* FUNCIONES PAYKU */
 
 function checkPayment($id)
