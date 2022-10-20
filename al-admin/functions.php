@@ -467,7 +467,7 @@ function getOrderInfo($conn, $orderSingle, $ticketId)
         if (!empty($theInfo)) {
             return $theInfo;
         } else {
-            return "NO";
+            return false;
         }
     } catch (Exception $e) {
 
@@ -501,7 +501,7 @@ function displayTickets($conn, $eventId)
             $personRut = getPersonInfo($conn, 'personRut', $row['personId']);
             $personEmail = getPersonInfo($conn, 'personEmail', $row['personId']);
             $orderTickets = getOrderInfo($conn, 'orderTickets', $row['ticketId']);
-            if(!empty($orderId) && !empty($orderTickets)){
+            if($orderId!=false){
                 echo "<tr>";
                 echo "<td>#0" . $orderId . "</td>";
                 echo "<td>" . $personName . "</td>";
