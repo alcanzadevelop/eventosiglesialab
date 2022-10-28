@@ -57,6 +57,7 @@
                 <ul aria-expanded="false">
                     <li><a href="mis-eventos">Mis Eventos</a></li>
                     <li><a href="tickets-vendidos">Ticket Vendidos</a></li>
+                    <li><a href="reportes">Reportes</a></li>
                     <!--
                     <li><a href="nuevo-evento">Nuevo Evento</a></li>
                     <li><a href="index.html">Panel</a></li>

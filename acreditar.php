@@ -62,7 +62,7 @@ if (!empty($eventId)) {
                     <?php if ($theValue == "TRUE") { ?>
                         <div class="d-flex flex-wrap mb-2 align-items-center justify-content-between">
                             <div class="mb-3 mr-3">
-                                <h6 class="fs-16 text-black font-w600 mb-0">
+                                <h6 class="fs-16 text-black font-w600 mb-0"><?php echo getSoldTickets($conn, $eventId); ?>
                                     Entradas Totales</h6>
                                 <span class="fs-14">Vendidas en este evento</span>
                             </div>

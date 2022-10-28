@@ -104,21 +104,16 @@ if (!empty($_GET['id'])) {
                 if (!$mail->send()) {
                     echo 'Mailer Error: ' . $mail->ErrorInfo;
                 } else {
-
                     //Aparece aviso de venta exitosa
                     header('location: exito?id='.$orderId);
-
                 }
 
             }
-
         }
-
     } else {
         echo "Se ha producido un error. Por favor valide su pago a través de un correo.";
         die();
     }
-
 }
 
 ?>

@@ -457,6 +457,20 @@ function listEventsOrganization($conn, $userOrganization)
     }
 }
 
+function listEventsOrganizationForReport($conn, $userOrganization)
+{
+    $stmt = $conn->query("SELECT * FROM `event` WHERE organizationId=" . $userOrganization);
+    while ($row = $stmt->fetch()) {
+        echo "
+        <tr>
+          <td>" . $row['eventId'] . "</td>
+          <td>" . $row['eventName'] . "</td>
+          <td><a href='exportar-reporte?id=" . $row['eventId'] . "'><button class='btn bg-white text-primary btn-block'>Obtener Reporte</button></a></td>
+        </tr>
+        ";
+    }
+}
+
 function getOrderInfo($conn, $orderSingle, $ticketId)
 {
     try {
