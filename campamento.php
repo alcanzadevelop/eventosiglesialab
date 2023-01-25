@@ -19,9 +19,6 @@ require('al-admin/functions.php');
 <!--*** Preloader ***-->
 <?php include('al-includes/preloader.php');?>
 
-    <!--*** Main wrapper start ***-->
-    <div id="main-wrapper">
-
         <!--*** Content body start ***-->
         <div class="content-body">
             <!-- row -->
@@ -30,9 +27,6 @@ require('al-admin/functions.php');
             </div>
         </div>
         <!--*** Content body end ***-->
-
-    </div>
-    <!--*** Main wrapper end ***-->
 
     <!--*** Scripts ***-->
 <script src="./vendor/global/global.min.js"></script>
