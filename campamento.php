@@ -8,11 +8,6 @@ use GuzzleHttp\Client;
 require('al-admin/core.php');
 require('al-admin/functions.php');
 
-// echo getSoldTickets($conn);
-
-if (empty($_SESSION['userId'])) {
-    header('Location: login.php');
-}
 
 ?>
 <!DOCTYPE html>
@@ -26,8 +21,6 @@ if (empty($_SESSION['userId'])) {
 
     <!--*** Main wrapper start ***-->
     <div id="main-wrapper">
-
-        <?php include('al-includes/navbar.php');?>
 
         <!--*** Content body start ***-->
         <div class="content-body">
