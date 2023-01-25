@@ -551,6 +551,42 @@ function displayTeam($conn)
     }
 }
 
+function getAttendeesByEventId($conn, $eventId) {
+    $stmt = $conn->prepare("SELECT person.* FROM person
+                            JOIN ticket ON person.personId = ticket.personId
+                            JOIN `order` ON ticket.ticketId = `order`.ticketId
+                            WHERE `order`.eventId = :eventId AND ticket.ticketId != 0");
+    $stmt->bindParam(':eventId', $eventId);
+    $stmt->execute();
+    $attendees = $stmt->fetchAll();
+    ?>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Rut</th>
+            <th>Age</th>
+            <th>Extra</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach($attendees as $attendee) { ?>
+            <tr>
+                <td><?php echo $attendee['personName'] . " " . $attendee['personLastName']; ?></td>
+                <td><?php echo $attendee['personEmail']; ?></td>
+                <td><?php echo $attendee['personPhone']; ?></td>
+                <td><?php echo $attendee['personRut']; ?></td>
+                <td><?php echo $attendee['personAge']; ?></td>
+                <td><?php echo $attendee['personExtra']; ?></td>
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+    <?php
+}
+
 /* FUNCIONES PAYKU */
 
 function checkPayment($id)
