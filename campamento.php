@@ -20,7 +20,7 @@ require('al-admin/functions.php');
 <?php include('al-includes/preloader.php');?>
 
         <!--*** Content body start ***-->
-        <div class="content-body">
+        <div class="">
             <!-- row -->
             <div class="container-fluid">
                 <?php getAttendeesByEventId($conn, 4); ?>

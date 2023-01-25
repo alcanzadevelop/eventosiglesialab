@@ -564,7 +564,6 @@ function getAttendeesByEventId($conn, $eventId) {
         <tr>
             <th>Name</th>
             <th>Email</th>
-            <th>Phone</th>
             <th>Rut</th>
             <th>Age</th>
             <th>Extra</th>
@@ -575,7 +574,6 @@ function getAttendeesByEventId($conn, $eventId) {
             <tr>
                 <td><?php echo $attendee['personName'] . " " . $attendee['personLastName']; ?></td>
                 <td><?php echo $attendee['personEmail']; ?></td>
-                <td><?php echo $attendee['personPhone']; ?></td>
                 <td><?php echo $attendee['personRut']; ?></td>
                 <td><?php echo $attendee['personAge']; ?></td>
                 <td><?php echo $attendee['personExtra']; ?></td>
