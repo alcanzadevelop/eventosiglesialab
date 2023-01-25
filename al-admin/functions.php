@@ -553,9 +553,8 @@ function displayTeam($conn)
 
 function getAttendeesByEventId($conn, $eventId) {
     $stmt = $conn->prepare("SELECT person.* FROM person
-                            JOIN ticket ON person.personId = ticket.personId
-                            JOIN `order` ON ticket.ticketId = `order`.ticketId
-                            WHERE `order`.eventId = :eventId AND ticket.ticketId != 0");
+                            JOIN transaction ON person.personId = transaction.personId
+                            WHERE transaction.transactionSubject = :eventId ");
     $stmt->bindParam(':eventId', $eventId);
     $stmt->execute();
     $attendees = $stmt->fetchAll();
